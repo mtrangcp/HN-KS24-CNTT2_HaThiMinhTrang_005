@@ -15,7 +15,26 @@ public class EX3_1 {
         System.out.print("Nhập tổng: ");
         int S = sc.nextInt();
 
+        boolean found = false;
 
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += arr[j];
+
+                if (sum == S) {
+                    System.out.println("Index đầu: " + i);
+                    System.out.println("Index cuối: " + j);
+                    found = true;
+                    break;
+                }
+            }
+            if (found) break;
+        }
+
+        if (!found) {
+            System.out.println("Không tồn tại mảng con thỏa mãn");
+        }
 
     }
 }
